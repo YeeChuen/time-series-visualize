@@ -7,8 +7,8 @@ log of multiple process parameters that is analyzed by users.
 Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
 
 ## Using Boston Bioprocess dashboard:
-                - there is only 3 pages
-                - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
+- there is only 3 pages
+-   on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
                 - upload your csv file on `Data Upload`
                     - limitation:
                         - .csv extension
