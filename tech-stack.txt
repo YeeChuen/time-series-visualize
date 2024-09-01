@@ -1,12 +1,8 @@
 ** Development **
-    VSC: 
-        - IDE used
-
-    npm:
-
-    node.js:
-
-    python:
+    VSC
+    npm
+    node.js
+    python
 
 ** Frontend tech stack **
     vite:
