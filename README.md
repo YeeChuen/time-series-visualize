@@ -6,29 +6,27 @@ log of multiple process parameters that is analyzed by users.
 
 Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
 
-## Using Boston Bioprocess dashboard:
+## Using Boston Bioprocess Dashboard:
 - there is only 3 pages
     - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
-                - upload your csv file on `Data Upload`
-                    - limitation:
-                        - .csv extension
-                        - first row shows client name and client id in this format
-                            <client_name>_<client_id>
-                        - following row should contain following headers
-                            time stamp, parameter, process value, units
-                        - following rows are the data corresponding to the headers
-                - once upload complete, you can visualize the data in `Data Table` and `Data Graph`
-                - `Data Table` and `Data Graph` have the following format:
-                    - click on the desired page to navigate
-                    - select client on the dropdown menu
-                    - data visualization correspond to selected client
+    - upload your csv file on `Data Upload`
+        - limitation:
+            - .csv extension
+            - first row shows client name and client id in this format `<client_name>_<client_id>`
+            - following row should contain following headers: time stamp, parameter, process value, units
+            - following rows are the data corresponding to the headers
+    - once upload complete, you can visualize the data in `Data Table` and `Data Graph`
+    - `Data Table` and `Data Graph` have the following format:
+        - click on the desired page to navigate
+        - select client on the dropdown menu
+        - data visualization correspond to selected client
 
-            - web server:
-                - to be added
+## Web Server:
+- to be added
 
-            - pre-requisites:
-                - IDE of your choice (recommends VSC)
-                    https://code.visualstudio.com/
+## Prerequisite:
+- IDE of your choice (recommends VSC)
+    https://code.visualstudio.com/
                 - npm & node.js
                     https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
                 - python
