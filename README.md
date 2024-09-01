@@ -25,101 +25,114 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 - to be added
 
 ## Prerequisite:
-- IDE of your choice (recommends VSC)
-    https://code.visualstudio.com/
-                - npm & node.js
-                    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
-                - python
-                    https://www.python.org/
-                - postgres
-                    https://www.postgresql.org/
+- IDE of your choice (recommends VSC) https://code.visualstudio.com/
+- npm & node.js https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+- python https://www.python.org/
+- postgres https://www.postgresql.org/
 
-            - installations & setups:   
-                - python:
-                    - cd to backend directory
-                        `cd .\boston-bioprocess\backend`
-                    - create virtual environment
-                        `python -m venv venv`
-                    - start python virtual environment
-                        `.\venv\Scripts\activate`
-                        - note: to deactivate:
-                            `deactivate`
-                    - install backend dependencies
-                        - pip install -r requirements.txt
+## installations & setups:   
+Backend:
+1. cd to backend directory
 
-                - frontend:
-                    - cd to frontend directory
-                        `cd .\boston-bioprocess\frontend`
-                    - install frontend dependencies
-                        `npm install`
+`cd .\boston-bioprocess\backend`
 
-                - database:
-                    - open psql terminal (SQL Shell)
-                        - window search "psql"
-                    - using SQL Shell, create database: client_fermentation
-                        `CREATE DATABASE client_fermentation;`
-                    - create a `.env` file to your backend directory
-                        `cd .\boston-bioprocess\backend`
-                        create: `.env`
-                        - add below into `.env`:
-                            ```
-                            POSTGRESQL_SERVER = "localhost"
-                            POSTGRESQL_DATABASE = "client_fermentation"
-                            POSTGRESQL_PORT = "5432"
-                            POSTGRESQL_USER = "postgres"
-                            POSTGRESQL_PASSWORD = "<your password>*" 
-                            ```
-                        - note: update each variable based on your setup.
+2. create virtual environment
 
-            - usage:
-                - start frontend: 
-                    - cd to frontend directory
-                        `cd .\boston-bioprocess\frontend`
-                    - start frontend server
-                        `npm run dev`
+`python -m venv venv`
 
-                - start backend: 
-                    - cd to backend directory
-                        `cd .\boston-bioprocess\backend`
-                    - start virtual environment
-                        `.\venv\Scripts\activate`
-                    - start backend server
-                        `flask run`
+3. start python virtual environment
 
-                - start database:
-                    - Postgresql DB should be on after finishing installation
+`.\venv\Scripts\activate`
 
-                - port information:
-                    - frontend port: 5173
-                    - backend port: 5000
-                    - database port: 5432
+- note: to deactivate: `deactivate`
 
-            - testing:
-                - frontend testing:
-                    - start the frontend server
-                        - cd to frontend directory
-                            `cd .\boston-bioprocess\frontend`
-                        - start frontend server
-                            `npm run dev`
-                    - start the testing server
-                        - cd to frontend directory
-                            `cd .\boston-bioprocess\frontend`
-                        - start frontend server
-                            `npx cypress open`
-                        - follow cypress prompt
-                            - it will ask for configuration when using for first time.
-                            - use `E2E Testing`
-                            - use `Chrome`
-                            - click `Start E2E Testing in Chrome`
-                            - click `Run 4 specs`
-                        - No coverage for current version
+4. install backend dependencies
 
-                - backend testing:
-                    - cd to backend directory
-                        `cd .\boston-bioprocess\backend`
-                    - start virtual environment
-                        `.\venv\Scripts\activate`
-                    - run testing
-                        `coverage run -m pytest`
-                    - check coverage
-                        `coverage report`
+`pip install -r requirements.txt`
+
+Frontend:
+
+1. cd to frontend directory
+
+`cd .\boston-bioprocess\frontend`
+
+2. install frontend dependencies
+
+`npm install`
+
+Database:
+
+1. open psql terminal (SQL Shell)
+    - window search "psql"
+    - using SQL Shell, create database: client_fermentation
+
+`CREATE DATABASE client_fermentation;`
+
+2. create a `.env` file to your backend directory
+
+`cd .\boston-bioprocess\backend`
+
+3. create: `.env` add below into `.env`:
+```
+POSTGRESQL_SERVER = "localhost"
+POSTGRESQL_DATABASE = "client_fermentation"
+POSTGRESQL_PORT = "5432"
+POSTGRESQL_USER = "postgres"
+POSTGRESQL_PASSWORD = "<your password>*" 
+```
+
+- note: update each variable based on your setup.
+
+
+- usage:
+- start frontend: 
+- cd to frontend directory
+`cd .\boston-bioprocess\frontend`
+- start frontend server
+`npm run dev`
+
+- start backend: 
+- cd to backend directory
+`cd .\boston-bioprocess\backend`
+- start virtual environment
+`.\venv\Scripts\activate`
+- start backend server
+`flask run`
+
+- start database:
+- Postgresql DB should be on after finishing installation
+
+- port information:
+- frontend port: 5173
+- backend port: 5000
+- database port: 5432
+
+- testing:
+- frontend testing:
+- start the frontend server
+- cd to frontend directory
+`cd .\boston-bioprocess\frontend`
+- start frontend server
+`npm run dev`
+- start the testing server
+- cd to frontend directory
+`cd .\boston-bioprocess\frontend`
+- start frontend server
+`npx cypress open`
+- follow cypress prompt
+- it will ask for configuration when using for first time.
+- use `E2E Testing`
+- use `Chrome`
+- click `Start E2E Testing in Chrome`
+- click `Run 4 specs`
+- No coverage for current version
+
+- backend testing:
+- cd to backend directory
+`cd .\boston-bioprocess\backend`
+- start virtual environment
+`.\venv\Scripts\activate`
+- run testing
+`coverage run -m pytest`
+- check coverage
+`coverage report`
