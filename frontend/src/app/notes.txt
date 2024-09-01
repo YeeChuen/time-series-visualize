@@ -1,0 +1,4 @@
+app directory contains:
+    - the main app
+    - routers
+    - pages

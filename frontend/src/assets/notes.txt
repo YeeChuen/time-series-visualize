@@ -1,0 +1,7 @@
+assets directory contains:
+    - all static files, such as:
+        - image
+        - video 
+        - logo
+        - fonts
+        - and other static files

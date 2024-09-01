@@ -1,0 +1,3 @@
+repository directory contains:
+    - files containing CRUD method for per models
+    - 1 file per model

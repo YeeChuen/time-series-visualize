@@ -1,0 +1,3 @@
+models directory contains:
+    - files to define the object type (like interface or type in TypeScript)
+    - have a basic to_json method.

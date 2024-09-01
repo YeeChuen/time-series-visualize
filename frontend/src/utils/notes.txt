@@ -1,0 +1,5 @@
+utils directory contains 
+    - reusable functions:
+        - date formatting
+        - other constant
+        - other shared utility functions

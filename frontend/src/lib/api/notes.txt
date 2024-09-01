@@ -1,0 +1,2 @@
+api directory contains:
+    - shared API calls.

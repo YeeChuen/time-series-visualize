@@ -1,0 +1,118 @@
+** Development **
+    VSC: 
+        - IDE used
+
+    npm:
+
+    node.js:
+
+    python:
+
+** Frontend tech stack **
+    vite:
+        npm create vite@latest .
+
+    TypeScript/JavaScript:
+        - frontend language
+
+    React Router:
+        npm install --save react-router 
+        npm install --save react-router-dom 
+        npm install --save @types/react-router 
+        npm install --save @types/react-router-dom 
+
+    Css normalize: (for normlizing css)
+        npm install --save normalize.css
+        note: remember also to reset --vh using useEffect
+
+    Papaparse: (package for reading csv)
+        npm install --save papaparse
+        npm install --save @types/papaparse
+
+    AntDesign: (general style libary)
+        npm install --save antd 
+
+    AntD Icons (icon usage)
+        npm install --save @ant-design/icons
+
+    AntD color (color)
+        npm install --save @ant-design/colors
+
+    AntV: (for chart generation)
+        npm install --save @ant-design/charts 
+        npm install --save @ant-design/plots 
+
+
+    Rechart: (for chart generation)
+        npm install --save recharts
+        npm install --save @types/recharts
+
+** Backend tech stack **
+    Python:
+        - backend language
+
+    flask: (backend framework)
+        pip install flask
+
+    flask-cors: (to connect to frontend)
+        pip install -U flask-cors
+
+    python-dotenv: (to read .env file)
+        pip install python-dotenv
+    
+    Postgresql: (backend database)
+        https://www.postgresql.org/
+
+    psycopg2: (connection to postgres)
+        pip install psycopg2
+
+
+** Testing tech stack **
+    Frontend:
+        Cypress: (for testing)
+            npm install --save-dev cypress 
+            npx cypress open
+            npm install @cypress/vite-dev-server (with vite dev server)
+
+            ** not used **
+            npm install --save-dev cypress-file-upload (for file upload)
+            npm install @cypress/code-coverage --save-dev (with coverage (over head of setting this up quite high, skip for now))
+
+    Backend:
+        pytest: (for testing)
+            pip install pytest
+
+        pytest-flask: (for testing)
+            pip install pytest-flask
+
+        coverage: (for python coverage) 
+            pip install coverage
+                
+        postman: (API testing)
+            https://www.postman.com/
+
+** Container **
+    Docker:
+        https://docs.docker.com/engine/install/
+
+
+** Error **
+    frontend:
+        (not using this 1hr + trying to debug) Jest: (for testing)            
+            npm install --save-dev jest
+            npm init jest@latest
+            npm install --save-dev ts-jest
+            npm install --save-dev @jest/globals
+
+            fix unexpected token issue 
+            ref: https://dev.to/hannahadora/jest-testing-with-vite-and-react-typescript-4bap
+                npm install ts-node @testing-library/jest-dom --save-dev
+                npm install jest-environment-jsdom
+                npm install identity-obj-proxy --save-dev
+
+        (not using this 1hr + trying to debug) React Testing Library: (for testing)
+            with TS
+            npm install --save-dev @testing-library/react @testing-library/dom @types/react @types/react-dom
+
+            with Jest
+            npm install --save-dev @testing-library/jest-dom

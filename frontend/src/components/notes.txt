@@ -1,0 +1,8 @@
+components directory contains:
+    - shared components, such as:
+        - file uploader
+        - image uploader
+        - charts
+        - forms
+        - buttons
+        - other shared components that can be used by different feature

@@ -1,0 +1,164 @@
+{
+    "runTimeSeries": [
+        {
+            "id": "47f0362e-44a5-4b8a-b7ee-9daa57477bd3",
+            "parameter": "pH",
+            "processValue": 5.0,
+            "runId": "TEST001",
+            "timeStamp": 0.1,
+            "units": "pH"
+        },
+        {
+            "id": "5418b31f-c7e8-4123-8461-0d7a62f076ea",
+            "parameter": "pH",
+            "processValue": 5.79,
+            "runId": "TEST001",
+            "timeStamp": 0.2,
+            "units": "pH"
+        },
+        {
+            "id": "20184115-d6ab-4d7e-b400-b94ee2203e5a",
+            "parameter": "pH",
+            "processValue": 6.79,
+            "runId": "TEST001",
+            "timeStamp": 0.3,
+            "units": "pH"
+        },
+        {
+            "id": "856d51e1-9dd8-479a-8d6c-d5bd8e935a78",
+            "parameter": "pH",
+            "processValue": 6.15,
+            "runId": "TEST001",
+            "timeStamp": 0.4,
+            "units": "pH"
+        },
+        {
+            "id": "10baac84-057f-4686-bd0c-9c719272ae54",
+            "parameter": "pH",
+            "processValue": 4.0,
+            "runId": "TEST001",
+            "timeStamp": 0.5,
+            "units": "pH"
+        },
+        {
+            "id": "8bc2c853-5738-4b97-ad32-f7917acfa8d8",
+            "parameter": "Temperature",
+            "processValue": 28.01,
+            "runId": "TEST001",
+            "timeStamp": 0.1,
+            "units": "DegC"
+        },
+        {
+            "id": "e496dee5-9247-410a-851c-b9e898947134",
+            "parameter": "Temperature",
+            "processValue": 28.04,
+            "runId": "TEST001",
+            "timeStamp": 0.2,
+            "units": "DegC"
+        },
+        {
+            "id": "4011aca5-56f9-4402-bdde-12a2de8288d7",
+            "parameter": "Temperature",
+            "processValue": 27.99,
+            "runId": "TEST001",
+            "timeStamp": 0.3,
+            "units": "DegC"
+        },
+        {
+            "id": "406c9a72-3c39-4fff-9653-10a7e50d15a8",
+            "parameter": "Temperature",
+            "processValue": 27.55,
+            "runId": "TEST001",
+            "timeStamp": 0.4,
+            "units": "DegC"
+        },
+        {
+            "id": "dea04461-9cbb-4d52-9ec0-9dc4372e24c9",
+            "parameter": "Temperature",
+            "processValue": 29.13,
+            "runId": "TEST001",
+            "timeStamp": 0.5,
+            "units": "DegC"
+        },
+        {
+            "id": "d15ed0fe-a865-4b74-b935-80c93cb8a3a7",
+            "parameter": "glucose",
+            "processValue": 2.0,
+            "runId": "TEST001",
+            "timeStamp": 0.1,
+            "units": "%"
+        },
+        {
+            "id": "e31b34b1-2364-460f-bc3e-56c71a1e1888",
+            "parameter": "glucose",
+            "processValue": 5.43,
+            "runId": "TEST001",
+            "timeStamp": 0.2,
+            "units": "%"
+        },
+        {
+            "id": "07eacd62-76f9-4375-a0fb-81973e76f405",
+            "parameter": "glucose",
+            "processValue": 15.99,
+            "runId": "TEST001",
+            "timeStamp": 0.3,
+            "units": "%"
+        },
+        {
+            "id": "41029cfe-8ce2-4c07-aba5-d43dee8f17f1",
+            "parameter": "glucose",
+            "processValue": 27.55,
+            "runId": "TEST001",
+            "timeStamp": 0.4,
+            "units": "%"
+        },
+        {
+            "id": "a885374a-335a-4639-b225-59cd3f0548e3",
+            "parameter": "glucose",
+            "processValue": 89.33,
+            "runId": "TEST001",
+            "timeStamp": 0.5,
+            "units": "%"
+        },
+        {
+            "id": "0f44e389-17ba-49e3-b7d0-853680d76540",
+            "parameter": "acid",
+            "processValue": 99.88,
+            "runId": "TEST001",
+            "timeStamp": 0.1,
+            "units": "%"
+        },
+        {
+            "id": "4b0d8791-0dc4-4fcf-acda-46c8ba7206e1",
+            "parameter": "acid",
+            "processValue": 86.63,
+            "runId": "TEST001",
+            "timeStamp": 0.2,
+            "units": "%"
+        },
+        {
+            "id": "b774d65f-441a-4ad6-9f2d-c19c600d7413",
+            "parameter": "acid",
+            "processValue": 76.66,
+            "runId": "TEST001",
+            "timeStamp": 0.3,
+            "units": "%"
+        },
+        {
+            "id": "0efa8795-d15c-4542-8c78-55d0789bea29",
+            "parameter": "acid",
+            "processValue": 69.69,
+            "runId": "TEST001",
+            "timeStamp": 0.4,
+            "units": "%"
+        },
+        {
+            "id": "9b7c6fed-88a2-4164-8c56-e3da4e997814",
+            "parameter": "acid",
+            "processValue": 18.33,
+            "runId": "TEST001",
+            "timeStamp": 0.5,
+            "units": "%"
+        }
+    ]
+}

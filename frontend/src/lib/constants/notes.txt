@@ -1,0 +1,2 @@
+constants directory contains:
+    - constant variable

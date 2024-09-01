@@ -1,0 +1,3 @@
+services directory contains:
+    - services that calls to CRUD from repositories
+    - here is where you do middle ware, business logic checks etc.

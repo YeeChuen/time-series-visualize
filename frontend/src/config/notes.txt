@@ -1,0 +1,4 @@
+config directory contains:
+    - configuration files
+    - env variables
+    - maybe theme colors, etc

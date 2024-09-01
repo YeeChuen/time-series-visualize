@@ -1,0 +1,2 @@
+types directory contains 
+    - global reusable types

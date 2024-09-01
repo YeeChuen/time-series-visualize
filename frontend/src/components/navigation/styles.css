@@ -1,0 +1,11 @@
+.brand--btn {
+  color: black;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "monaco", monospace;
+}
+.brand--btn:hover {
+  color: black;
+}

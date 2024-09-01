@@ -1,0 +1,2 @@
+routes directory contains:
+    - routing for each microservice

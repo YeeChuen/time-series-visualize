@@ -1,0 +1,4 @@
+test directory contains:
+    - mock files
+    - testing utils
+    - testing lib stuff

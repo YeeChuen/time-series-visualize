@@ -1,0 +1,23 @@
+,"Client TEST001_TEST001: DataLog Param, PV and Units",,,
+,,,,
+parameter,processValue,runId,timeStamp,units
+pH,5,TEST001,0.1,pH
+pH,5.79,TEST001,0.2,pH
+pH,6.79,TEST001,0.3,pH
+pH,6.15,TEST001,0.4,pH
+pH,4,TEST001,0.5,pH
+Temperature,28.01,TEST001,0.1,DegC
+Temperature,28.04,TEST001,0.2,DegC
+Temperature,27.99,TEST001,0.3,DegC
+Temperature,27.55,TEST001,0.4,DegC
+Temperature,29.13,TEST001,0.5,DegC
+glucose,2,TEST001,0.1,%
+glucose,5.43,TEST001,0.2,%
+glucose,15.99,TEST001,0.3,%
+glucose,27.55,TEST001,0.4,%
+glucose,89.33,TEST001,0.5,%
+acid,99.88,TEST001,0.1,%
+acid,86.63,TEST001,0.2,%
+acid,76.66,TEST001,0.3,%
+acid,69.69,TEST001,0.4,%
+acid,18.33,TEST001,0.5,%

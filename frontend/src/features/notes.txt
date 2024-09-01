@@ -1,0 +1,7 @@
+features directory contains:
+    - components categorize by features/tools/pages, such as:
+        - comments sections
+        - data inventory
+        - multi crop
+        - users
+        - etc

@@ -1,0 +1,6 @@
+lib directory contains 
+    - reusable pre-configured libraries:
+        - auth
+        - react query
+        - etc
+    - shared api 
