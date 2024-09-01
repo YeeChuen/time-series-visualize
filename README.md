@@ -31,7 +31,7 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 - postgres https://www.postgresql.org/
 
 ## installations & setups:   
-Backend:
+### Backend:
 1. cd to backend directory
 
 `cd .\boston-bioprocess\backend`
@@ -50,7 +50,7 @@ Backend:
 
 `pip install -r requirements.txt`
 
-Frontend:
+### Frontend:
 
 1. cd to frontend directory
 
@@ -60,7 +60,7 @@ Frontend:
 
 `npm install`
 
-Database:
+### Database:
 
 1. open psql terminal (SQL Shell)
     - window search "psql"
@@ -83,56 +83,74 @@ POSTGRESQL_PASSWORD = "<your password>*"
 
 - note: update each variable based on your setup.
 
+## Usage:
+### Start frontend: 
+1. cd to frontend directory
 
-- usage:
-- start frontend: 
-- cd to frontend directory
 `cd .\boston-bioprocess\frontend`
-- start frontend server
+
+2. start frontend server
+
 `npm run dev`
 
-- start backend: 
-- cd to backend directory
+### Start backend: 
+1. cd to backend directory
+
 `cd .\boston-bioprocess\backend`
-- start virtual environment
+
+2. start virtual environment
+
 `.\venv\Scripts\activate`
-- start backend server
+
+3. start backend server
+
 `flask run`
 
-- start database:
-- Postgresql DB should be on after finishing installation
+### Start database:
+Postgresql DB should be on after finishing installation
 
-- port information:
+### Port information:
+expect servers to be live on following server:
 - frontend port: 5173
 - backend port: 5000
 - database port: 5432
 
-- testing:
-- frontend testing:
-- start the frontend server
-- cd to frontend directory
-`cd .\boston-bioprocess\frontend`
-- start frontend server
-`npm run dev`
-- start the testing server
-- cd to frontend directory
-`cd .\boston-bioprocess\frontend`
-- start frontend server
-`npx cypress open`
-- follow cypress prompt
-- it will ask for configuration when using for first time.
-- use `E2E Testing`
-- use `Chrome`
-- click `Start E2E Testing in Chrome`
-- click `Run 4 specs`
-- No coverage for current version
+## Testing:
+### Frontend testing:
+1. cd to frontend directory
 
-- backend testing:
-- cd to backend directory
+`cd .\boston-bioprocess\frontend`
+
+2. start frontend server
+
+`npm run dev`
+
+3. similarly, in another CLI tab start the testing server
+
+`npx cypress open`
+
+    - follow cypress prompt
+    - it will ask for configuration when using for first time.
+    - use `E2E Testing`
+    - use `Chrome`
+    - click `Start E2E Testing in Chrome`
+    - click `Run 4 specs`
+
+No coverage for current version
+
+### Backend testing:
+1. cd to backend directory
+
 `cd .\boston-bioprocess\backend`
-- start virtual environment
+
+2. start virtual environment
+
 `.\venv\Scripts\activate`
-- run testing
+
+3. run testing
+
 `coverage run -m pytest`
-- check coverage
+
+4. check coverage
+
 `coverage report`
