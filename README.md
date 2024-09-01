@@ -8,7 +8,7 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 
 ## Using Boston Bioprocess dashboard:
 - there is only 3 pages
--   on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
+    - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
                 - upload your csv file on `Data Upload`
                     - limitation:
                         - .csv extension
