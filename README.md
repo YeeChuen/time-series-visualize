@@ -1,4 +1,12 @@
- Using Boston Bioprocess dashboard:
+# Boston Bioprocess Dashboard
+
+Boston Bioprocess regularly runs fermentation tanks (think of a beer brewing process) to 
+produce valuable bioproducts for our clients. Each fermentation run generates a time-series 
+log of multiple process parameters that is analyzed by users. 
+
+Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
+
+## Using Boston Bioprocess dashboard:
                 - there is only 3 pages
                 - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
                 - upload your csv file on `Data Upload`
