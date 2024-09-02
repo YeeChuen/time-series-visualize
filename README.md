@@ -47,7 +47,7 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 
 `docker build -t boston-bioprocess-app .`
 
-4. OR you if you have set up ENV variables as shown above, you can simply pull from docker, this way build is not required.
+4. OR you if you have set up Postgresql with ENV variables as shown above, you can simply pull from docker, this way build is not required.
 
 `docker pull yeechuen/yct-bpp`
 
