@@ -107,7 +107,7 @@
                 send an invite to achowdhury@bostonbioprocess.com (github username: anupamc01) ***
 
 
-12. (1h) deployment, dockerize frontend, microservice and db.
+12. (1h)(16:30) deployment, dockerize frontend, microservice and db.
     1 hour (D3):
         - build frontend code
         - dockerize
@@ -115,9 +115,13 @@
                 - .env is also copied
             - unsure DB issue 
                 - unsure how to handle this
-
-        - deploy 
+        - deploy
+            - Render
 
 
 13. submissions
     (D3):
+        - send email with:
+            - github repo link
+            - docker image link
+            - web server link
