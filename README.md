@@ -28,6 +28,7 @@ note: due to the web deployed on a free tier platform:
 - it will takes up to minutes to load the website
 - once website is up, first file upload will most likely fail, but wait a couple minutes, and try uploading it again.
     - if the second upload didn't work, it might've been uploaded, navigate to `Data Table` or `Data Graph` to see if uploaded client exists.
+- large .csv file will likely fail, use this .csv example: `mock_csv.csv` (you can modify the values in the file and upload to see different data.)
 
 # Local Server (using Docker)
 ## Prerequisite:
