@@ -4,12 +4,6 @@ import os
 
 
 def db_conn():
-    print(os.environ["POSTGRESQL_SERVER"])
-    print(os.environ["POSTGRESQL_DATABASE"])
-    print(os.environ["POSTGRESQL_PORT"])
-    print(os.environ["POSTGRESQL_USER"])
-    print(os.environ["POSTGRESQL_PASSWORD"])
-
     return psycopg2.connect(
         host=os.environ["POSTGRESQL_SERVER"],
         database=os.environ["POSTGRESQL_DATABASE"],
