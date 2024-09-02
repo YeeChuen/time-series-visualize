@@ -22,7 +22,7 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
         - data visualization correspond to selected client
 
 # Web Server
-- to be added
+- https://yct-bbp.onrender.com/
 
 # Local Server (using Docker)
 ## Prerequisite:
