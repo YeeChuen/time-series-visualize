@@ -24,6 +24,11 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 # Web Server
 - https://yct-bbp.onrender.com/
 
+note: due to the web deployed on a free tier platform:
+- it will takes up to minutes to load the website
+- once website is up, first file upload will most likely fail, but wait a couple minutes, and try uploading it again.
+    - if the second upload didn't work, it might've been uploaded, navigate to `Data Table` or `Data Graph` to see if uploaded client exists.
+
 # Local Server (using Docker)
 ## Prerequisite:
 - Docker https://www.docker.com/
