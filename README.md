@@ -54,7 +54,7 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 6. follow setup steps for [postgresql](#Database)
 
 
-## Usage
+## Usage: Docker Local Server
 1. run docker image
 
 `docker run --rm -p 5000:5000 boston-bioprocess-app`
