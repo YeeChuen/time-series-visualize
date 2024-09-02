@@ -34,11 +34,20 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 
 `cd .\boston-bioprocess`
 
-2. build docker (~6 min)
+2. replace ENV variable in `.\boston-bioprocess\Dockerfile`
+```
+ENV POSTGRESQL_SERVER=host.docker.internal
+ENV POSTGRESQL_DATABASE=client_fermentation
+ENV POSTGRESQL_PORT=5432
+ENV POSTGRESQL_USER=postgres
+ENV POSTGRESQL_PASSWORD=Postgresql98*
+```
+
+3. build docker (~6 min)
 
 `docker build -t boston-bioprocess-app .`
 
-3. follow setup steps for [postgresql](#Database)
+4. follow setup steps for [postgresql](#Database)
 
 
 ## usage
@@ -105,7 +114,7 @@ POSTGRESQL_SERVER = "localhost"
 POSTGRESQL_DATABASE = "client_fermentation"
 POSTGRESQL_PORT = "5432"
 POSTGRESQL_USER = "postgres"
-POSTGRESQL_PASSWORD = "<your password>*" 
+POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
 ```
 
 - note: update each variable based on your setup.
