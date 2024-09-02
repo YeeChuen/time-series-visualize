@@ -1,6 +1,7 @@
-import { Select } from "antd";
+import { Button, Flex, Select } from "antd";
 import { useEffect, useState } from "react";
 import {
+  deleteRunClient,
   getRunClients,
   getRunTimeSeriesByRunClient,
 } from "../../../lib/api/runClientApi";
@@ -11,6 +12,8 @@ const DataTableSelect = () => {
   const [options, setOptions] = useState<
     { value: string; label: string }[] | undefined
   >();
+
+  const [deleteId, setDeleteId] = useState<string | undefined>(undefined);
 
   const { setRunTimeSeries } = useDataTableContext() || {};
 
@@ -51,6 +54,7 @@ const DataTableSelect = () => {
             };
           })
         );
+        setDeleteId(value);
       } else {
         console.error("Request failed:");
         console.error(data.message ? data.message : "Undefined error.");
@@ -59,18 +63,40 @@ const DataTableSelect = () => {
     fetchRunTimeSeriesByClient();
   };
 
+  const onDelete = () => {
+    const onDeleteRunClient = async () => {
+      if (deleteId) {
+        const data = await deleteRunClient(deleteId);
+        if (data.statusCode === 200) {
+          setDeleteId(undefined);
+        } else {
+          console.error("Request failed:");
+          console.error(data.message ? data.message : "Undefined error.");
+        }
+      }
+    };
+    onDeleteRunClient();
+  };
+
   return (
     <>
-      Select client:{" "}
-      <Select
-      data-test="client-selecter"
-        showSearch
-        style={{ width: 200 }}
-        placeholder="Select a client"
-        optionFilterProp="label"
-        onChange={onChange}
-        options={options}
-      />
+      <Flex justify="space-between">
+        <div>
+          Select client:{" "}
+          <Select
+            data-test="client-selecter"
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Select a client"
+            optionFilterProp="label"
+            onChange={onChange}
+            options={options}
+          />
+        </div>
+        <Button danger disabled={deleteId === undefined} onClick={onDelete}>
+          Delete client
+        </Button>
+      </Flex>
     </>
   );
 };

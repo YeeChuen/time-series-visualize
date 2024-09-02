@@ -64,3 +64,25 @@ export const createRunClient = (body: TRunClient) => {
       };
     });
 };
+
+export const deleteRunClient = (id: string) => {
+  const options = {
+    method: "DELETE",
+  };
+  return fetch(url + "/" + id, options)
+    .then((response) => {
+      const statusCode = response.status;
+      return response.json().then((data) => {
+        data.statusCode = statusCode;
+        return data;
+      });
+    })
+    .catch((error) => {
+      return {
+        statusCode: 400,
+        status: "Error",
+        message: error,
+      };
+    });
+
+}
