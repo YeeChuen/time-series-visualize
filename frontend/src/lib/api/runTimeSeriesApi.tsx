@@ -4,8 +4,6 @@ import { apiVersion1 } from "../constants";
 const url = `${apiVersion1}/run-time-series`;
 
 export const createAllRunTimeSeries = (body: TRunTimeSeries[]) => {
-
-  console.log(body)
   const options = {
     method: "POST",
     headers: {
