@@ -1,0 +1,23 @@
+,"Client TEST001_TEST001: DataLog Param, PV and Units",,
+,,,
+Parameter,Process value,Time Stamp,Units
+pH,5,0.1,pH
+pH,5.79,0.2,pH
+pH,6.79,0.3,pH
+pH,6.15,0.4,pH
+pH,4,0.5,pH
+Temperature,28.01,0.1,DegC
+Temperature,28.04,0.2,DegC
+Temperature,27.99,0.3,DegC
+Temperature,27.55,0.4,DegC
+Temperature,29.13,0.5,DegC
+Pump1,2,0.1,%
+Pump1,5.43,0.2,%
+Pump1,15.99,0.3,%
+Pump1,27.55,0.4,%
+Pump1,89.33,0.5,%
+Pump2,99.88,0.1,%
+Pump2,86.63,0.2,%
+Pump2,76.66,0.3,%
+Pump2,69.69,0.4,%
+Pump2,18.33,0.5,%
