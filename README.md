@@ -47,13 +47,21 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 
 `docker build -t boston-bioprocess-app .`
 
-4. follow setup steps for [postgresql](#Database)
+4. OR you if you have set up ENV variables as shown above, you can simply pull from docker, this way build is not required.
+
+`docker pull yeechuen/yct-bpp`
+
+6. follow setup steps for [postgresql](#Database)
 
 
 ## Usage
 1. run docker image
 
 `docker run --rm -p 5000:5000 boston-bioprocess-app`
+
+or (if you pulled)
+
+`docker run --rm -p 5000:5000 yeechuen/yct-bpp`
 
 2. open browser using following link:
 
