@@ -49,8 +49,9 @@ const DataUploadForm = () => {
       form.resetFields();
     } catch (error) {
       console.error(error);
+    } finally {
+      setDisabled(false);
     }
-    setDisabled(false);
   };
 
   return (
