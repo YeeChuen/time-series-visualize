@@ -21,13 +21,60 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
         - select client on the dropdown menu
         - data visualization correspond to selected client
 
+# Web Server
+- to be added
+
+# Local Server (using Docker)
+## Prerequisite:
+- Docker https://www.docker.com/
+- postgres https://www.postgresql.org/
+
+## Installations & setups: 
+1. cd to boston-bioprocess (git repo)
+
+`cd .\boston-bioprocess`
+
+2. replace ENV variable in `.\boston-bioprocess\Dockerfile`
+```
+ENV POSTGRESQL_SERVER=host.docker.internal
+ENV POSTGRESQL_DATABASE=client_fermentation
+ENV POSTGRESQL_PORT=5432
+ENV POSTGRESQL_USER=postgres
+ENV POSTGRESQL_PASSWORD=Postgresql98*
+```
+
+3. build docker (~6 min)
+
+`docker build -t boston-bioprocess-app .`
+
+4. OR you if you have set up Postgresql with ENV variables as shown above, you can simply pull from docker, this way build is not required.
+
+`docker pull yeechuen/yct-bpp`
+
+6. follow setup steps for [postgresql](#Database)
+
+
+## Usage: Docker Local Server
+1. run docker image
+
+`docker run --rm -p 5000:5000 boston-bioprocess-app`
+
+or (if you pulled)
+
+`docker run --rm -p 5000:5000 yeechuen/yct-bpp`
+
+2. open browser using following link:
+
+`http://localhost:5000/`
+
+# Local Server (manual)
 ## Prerequisite:
 - IDE of your choice (recommends VSC) https://code.visualstudio.com/
 - npm & node.js https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 - python https://www.python.org/
 - postgres https://www.postgresql.org/
 
-## installations & setups:   
+## Installations & Setups:   
 ### Backend:
 1. cd to backend directory
 
@@ -75,15 +122,11 @@ POSTGRESQL_SERVER = "localhost"
 POSTGRESQL_DATABASE = "client_fermentation"
 POSTGRESQL_PORT = "5432"
 POSTGRESQL_USER = "postgres"
-POSTGRESQL_PASSWORD = "<your password>*" 
+POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
 ```
 
 - note: update each variable based on your setup.
 
-## Usage: Web Server
-- to be added
-
-## Usage: Docker
 
 ## Usage: Manual Local Server
 ### Start frontend: 
@@ -117,8 +160,8 @@ expect servers to be live on following server:
 - backend port: 5000
 - database port: 5432
 
-## Testing:
-### Frontend testing:
+# Testing:
+## Frontend testing:
 1. cd to frontend directory
 
 `cd .\boston-bioprocess\frontend`
@@ -140,7 +183,7 @@ expect servers to be live on following server:
 
 No coverage for current version
 
-### Backend testing:
+## Backend testing:
 1. cd to backend directory
 
 `cd .\boston-bioprocess\backend`
