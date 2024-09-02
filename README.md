@@ -129,16 +129,6 @@ POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
 
 
 ## Usage: Manual Local Server
-### Start frontend: 
-1. cd to frontend directory
-
-`cd .\boston-bioprocess\frontend`
-
-2. start frontend server
-
-`npm run dev`
-
-### Start backend: 
 1. cd to backend directory
 
 `cd .\boston-bioprocess\backend`
