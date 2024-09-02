@@ -117,7 +117,7 @@ POSTGRESQL_USER = "postgres"
 POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
 ```
 
-    - note: update each variable based on your setup.
+- note: update each variable based on your setup.
 
 
 ## Usage: Manual Local Server
