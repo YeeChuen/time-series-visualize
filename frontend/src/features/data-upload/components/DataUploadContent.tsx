@@ -1,4 +1,3 @@
-import React from "react";
 import DataUploadForm from "./DataUploadForm";
 
 // here is mainly forms

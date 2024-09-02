@@ -1,4 +1,3 @@
-import React from 'react'
 import DataGraphContent from '../../../features/data-graph/components/DataGraphContent'
 
 const DataGraph = () => {

@@ -1,6 +1,5 @@
 import { FileAddTwoTone, FundTwoTone, ProfileTwoTone } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const items2: MenuProps["items"] = [

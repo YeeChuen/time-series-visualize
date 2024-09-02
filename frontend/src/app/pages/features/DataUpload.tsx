@@ -1,4 +1,3 @@
-import React from 'react'
 import DataUploadContent from '../../../features/data-upload/components/DataUploadContent'
 
 const DataUpload = () => {

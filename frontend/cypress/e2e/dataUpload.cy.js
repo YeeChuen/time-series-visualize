@@ -1,4 +1,3 @@
-import { gray } from "@ant-design/colors";
 
 describe("Data Table testing", () => {
   beforeEach(() => {

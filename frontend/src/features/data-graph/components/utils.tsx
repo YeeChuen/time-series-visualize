@@ -1,14 +1,14 @@
 import { TRunTimeSeries } from "../../../types";
 
 import {
+  blue,
+  green,
+  lime,
+  magenta,
+  orange,
+  purple,
   red,
   yellow,
-  green,
-  blue,
-  orange,
-  lime,
-  purple,
-  magenta,
 } from "@ant-design/colors";
 
 const colors = [red, yellow, green, blue, orange, lime, purple, magenta];

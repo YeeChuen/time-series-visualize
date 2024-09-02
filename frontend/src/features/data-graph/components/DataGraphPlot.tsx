@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
 import { DualAxes } from "@ant-design/plots";
 import { Empty } from "antd";
+import { useEffect, useState } from "react";
 import { useDataGraphContext } from "./DataGraphProvider";
 import { runTimeSeriesToData } from "./utils";
 

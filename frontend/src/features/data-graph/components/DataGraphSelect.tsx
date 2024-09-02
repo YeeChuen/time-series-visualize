@@ -1,10 +1,9 @@
-import { Button } from "antd";
-import React, { useContext, useEffect, useState } from "react";
+import { Select } from "antd";
+import { useEffect, useState } from "react";
 import {
   getRunClients,
   getRunTimeSeriesByRunClient,
 } from "../../../lib/api/runClientApi";
-import { Select } from "antd";
 import { TRunClient, TRunTimeSeries } from "../../../types";
 import { useDataGraphContext } from "./DataGraphProvider";
 

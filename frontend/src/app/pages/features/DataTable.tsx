@@ -1,4 +1,3 @@
-import React from 'react'
 import DataTableContent from '../../../features/data-table/components/DataTableContent'
 
 const DataTable = () => {

@@ -1,7 +1,6 @@
-import Papa from "papaparse";
-import { ParseResult } from "papaparse";
+import Papa, { ParseResult } from "papaparse";
+import { TRunClient } from "../../../types";
 import { TCsvObject } from "../types/csvObject";
-import { TRunClient, TRunTimeSeries } from "../../../types";
 
 export const parseCsv = async function (
   file: Blob,

@@ -1,7 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { Avatar } from "antd";
-import "./styles.css"
+import { Link } from "react-router-dom";
+import "./styles.css";
 
 import bostonBioprocessLogo from "../../assets/boston_bioprocess_logo.png";
 

@@ -1,0 +1,120 @@
+1.  (1h)(1:00) planning
+    1 hour (D1):
+        - UI design
+        - Simple system design
+        - software requirements gathering
+        - tech stack selection
+
+2.  (2h 45m)(3:45) frontend, web layout, forms feature for upload
+    2 hours 45 minute (D1):
+        - frontend code set up
+        - React routing, styling,
+        - UI dashboard, root layout
+        - Client fermentation layout
+        - data-upload component
+            - forms
+            - form validation
+        - parse csv
+
+3.  (3h 45m)(7:30) backend, microservice setup, POST file upload 50%
+    1 hours 45 minutes (D1):
+        - set up backend microservice using Python flask
+        - set up connection to db
+        - set up layers, route -> service -> repository -> db
+        - run_client model (class)
+        - link microservice for run_client table, GET, POST
+            - GET all run clients
+            - POST create run client
+            - including postman testing
+
+    30min (D2):
+        - link microservice for run_client table, DELETE
+            - GET run client by id
+            - DELETE run client
+            - including postman testing
+    
+    1 hour 30min (D2):
+        - time_series model (class)
+        - link microservice for time_series table, GET, POST, DELETE
+            - GET all time_series
+            - POST create time_series
+            - GET time_series by id
+            - DELETE time_series
+            - POST create all time_series (by list)
+            - including postman testing
+        - microservice for run_client
+            - Get time_series by run id (by client)
+            - including postman testing
+
+4.  (15m)(7:15) database, set up local db, and tables
+    15 minutes (D1):
+        - set up database, and 2 tables
+
+6.  (10m)(7:25) Test file upload
+    10min (D1):
+        - data-upload:
+            - frontend API
+                - create new client
+                - create new time series (list)
+
+
+8.  (1h 20m)(8:45) frontend, data-table
+    1 hour 20 min (D2):
+        - data-table
+            - frontend API:
+                - fetch all client
+                - get time series by client
+            - frontend UI
+                - select box (select by client) 
+                - table with pagination
+
+9.  (2h)(10:45) frontend, data-graph 
+    2 hours (D2):
+        - data-graph
+            - frontend UI
+                - select box (select by client) 
+                - graph/chart
+
+10. (4h)(14:45) testing, frontend and backend
+    1 hour 30 min (D2):
+        - backend:
+            - all 9 microservices (test succuess case only, ideally test failure as well.)
+            - coverage: 9 test (486    202    58%)
+            - run test: 
+                coverage run -m pytest
+                coverage report
+
+    1 hour (D2) + 1 hour 30 min (D3):
+        - frontend:
+            - e2e testing using Cypress
+            - testing for:
+                - navigation
+                - url name matches package
+                - data upload process and validation checks
+                - data table with and without data
+                - data graph with and without data
+            - unknown coverage as of now (high overhead to setup)
+
+11. (45m)(15:30) code management, upload to git
+    45 min (D3):
+        - write up README
+        - upload to github
+            private repo: yct_bbp,
+            invite: anupamc01
+
+                *** Commit your code to your private github repo 
+                (name it in the format of <yournameinitials>_bbp) and 
+                send an invite to achowdhury@bostonbioprocess.com (github username: anupamc01) ***
+
+
+12. deployment, dockerize frontend, microservice and db.
+    (D3):
+        - build frontend code
+        - dockerize
+            - Docker best practice is not applied
+                - .env is also copied
+            - unsure DB issue 
+
+
+13. submissions
+    (D3):

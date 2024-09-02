@@ -1,7 +1,6 @@
 import { Table } from "antd";
-import React from "react";
-import { useDataTableContext } from "./DataTableProvider";
 import { TRunTimeSeries } from "../../../types";
+import { useDataTableContext } from "./DataTableProvider";
 
 const columns = [
   {

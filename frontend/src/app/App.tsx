@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import './App.css'
-import AppProvider from './AppProvider'
-import AppRouter from './AppRouter'
+import './App.css';
+import AppProvider from './AppProvider';
+import AppRouter from './AppRouter';
 
 function App() {
   useEffect(() => {
