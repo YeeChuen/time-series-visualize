@@ -29,7 +29,7 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 - Docker https://www.docker.com/
 - postgres https://www.postgresql.org/
 
-## installations & setups: 
+## Installations & setups: 
 1. cd to boston-bioprocess (git repo)
 
 `cd .\boston-bioprocess`
@@ -50,7 +50,7 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 4. follow setup steps for [postgresql](#Database)
 
 
-## usage
+## Usage
 1. run docker image
 
 `docker run --rm -p 5000:5000 boston-bioprocess-app`
