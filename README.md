@@ -21,13 +21,39 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
         - select client on the dropdown menu
         - data visualization correspond to selected client
 
+# Web Server
+- to be added
+
+# Local Server (using Docker)
+## Prerequisite:
+- Docker https://www.docker.com/
+
+## installations & setups: 
+1. cd to boston-bioprocess (git repo)
+
+`cd .\boston-bioprocess`
+
+2. build docker (~6 min)
+
+`docker build -t boston-bioprocess-app .`
+
+## usage
+1. run docker image
+
+`docker run --rm -p 5000:5000 boston-bioprocess-app`
+
+2. open browser using following link:
+
+`http://localhost:5000/`
+
+# Local Server (manual)
 ## Prerequisite:
 - IDE of your choice (recommends VSC) https://code.visualstudio.com/
 - npm & node.js https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 - python https://www.python.org/
 - postgres https://www.postgresql.org/
 
-## installations & setups:   
+## Installations & Setups:   
 ### Backend:
 1. cd to backend directory
 
@@ -80,10 +106,6 @@ POSTGRESQL_PASSWORD = "<your password>*"
 
 - note: update each variable based on your setup.
 
-## Usage: Web Server
-- to be added
-
-## Usage: Docker
 
 ## Usage: Manual Local Server
 ### Start frontend: 
@@ -117,8 +139,8 @@ expect servers to be live on following server:
 - backend port: 5000
 - database port: 5432
 
-## Testing:
-### Frontend testing:
+# Testing:
+## Frontend testing:
 1. cd to frontend directory
 
 `cd .\boston-bioprocess\frontend`
@@ -140,7 +162,7 @@ expect servers to be live on following server:
 
 No coverage for current version
 
-### Backend testing:
+## Backend testing:
 1. cd to backend directory
 
 `cd .\boston-bioprocess\backend`
