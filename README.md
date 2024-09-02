@@ -21,9 +21,6 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
         - select client on the dropdown menu
         - data visualization correspond to selected client
 
-## Web Server:
-- to be added
-
 ## Prerequisite:
 - IDE of your choice (recommends VSC) https://code.visualstudio.com/
 - npm & node.js https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
@@ -83,7 +80,12 @@ POSTGRESQL_PASSWORD = "<your password>*"
 
 - note: update each variable based on your setup.
 
-## Usage:
+## Usage: Web Server
+- to be added
+
+## Usage: Docker
+
+## Usage: Manual Local Server
 ### Start frontend: 
 1. cd to frontend directory
 
