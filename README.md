@@ -27,6 +27,7 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 # Local Server (using Docker)
 ## Prerequisite:
 - Docker https://www.docker.com/
+- postgres https://www.postgresql.org/
 
 ## installations & setups: 
 1. cd to boston-bioprocess (git repo)
@@ -36,6 +37,9 @@ Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on 
 2. build docker (~6 min)
 
 `docker build -t boston-bioprocess-app .`
+
+3. follow setup steps for [postgresql](#Database)
+
 
 ## usage
 1. run docker image
