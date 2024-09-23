@@ -5,6 +5,10 @@ log of multiple process parameters.
 
 Time Series Visualize Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
 
+here are some mock data for reference:
+- [small data](https://github.com/YeeChuen/time-series-visualize/blob/main/mock-csv_001.csv)
+- [large data](https://github.com/YeeChuen/time-series-visualize/blob/main/Project-1-data_002.csv)
+
 ## Using Time Series Visualize Dashboard:
 - there is only 3 pages
     - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
