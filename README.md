@@ -44,12 +44,13 @@ note: due to the web deployed on a free tier platform:
 `docker pull yeechuen/yc-tsv-app`
 
 2. use following variable during setup steps for [postgresql](#Database)
+```
 POSTGRESQL_SERVER=host.docker.internal
 POSTGRESQL_DATABASE=time_series_projects
 POSTGRESQL_PORT=5432
 POSTGRESQL_USER=postgres
 POSTGRESQL_PASSWORD=Postgresql98*
-
+```
 
 ## Usage: Docker Local Server
 1. run docker image
