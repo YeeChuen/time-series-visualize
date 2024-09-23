@@ -138,15 +138,23 @@ VITE_MICROSERVICE_BASE_URL = <your microservice url> (default "http://localhost:
 ```
 
 ## Usage: Manual Local Server
-1. cd to backend directory
+1. cd to frontend directory
+
+`cd .\time-series-visualize\frontend`
+
+2. build frontend
+
+`npm run build`
+
+3. cd to backend directory
 
 `cd .\time-series-visualize\backend`
 
-2. start virtual environment
+4. start virtual environment
 
 `.\venv\Scripts\activate`
 
-3. start backend server
+5. start backend server
 
 `flask run`
 
