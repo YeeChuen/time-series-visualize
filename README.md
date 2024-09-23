@@ -25,11 +25,13 @@ here are some mock data for reference:
         - data visualization correspond to selected project
 
 # Web Server
-- TODO
+- [Website](https://time-series-visualize.onrender.com/)
 
 note: due to the web deployed on a free tier platform:
-- it will takes up to minutes to load the website
-- once website is up, first file upload will most likely fail, but wait a couple minutes, and try uploading it again.
+- it will takes some time to load the website
+- once website is up,
+    - wait couple minutes for the backend connection to establish (microservice, database)
+    - first file upload will most likely fail, but wait a couple minutes, and try uploading it again.
     - if the second upload didn't work, it might've been uploaded, navigate to `Data Table` or `Data Graph` to see if uploaded project exists.
 - large .csv file will likely fail, use this .csv example: `mock_csv.csv` (you can modify the values in the file and upload to see different data.)
 
