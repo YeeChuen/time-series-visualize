@@ -35,7 +35,6 @@ def get_run_time_series_route():
 @run_time_series_bp.route("/api/v1/run-time-series/<string:id>", methods=["GET"])
 def get_run_time_series_by_id_route(id):
     try:
-        #         client = get_client_by_id_service(id)
         run_time_series = get_run_time_series_by_id_service(id)
 
         if not run_time_series:

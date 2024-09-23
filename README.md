@@ -1,33 +1,32 @@
-# Boston Bioprocess Dashboard
+# Time Series Visualize Dashboard
 
-Boston Bioprocess regularly runs fermentation tanks (think of a beer brewing process) to 
-produce valuable bioproducts for our clients. Each fermentation run generates a time-series 
-log of multiple process parameters that is analyzed by users. 
+Time Series Visualize allow user to visualize projects run that generates a time-series 
+log of multiple process parameters. 
 
-Boston Bioprocess Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
+Time Series Visualize Dashboard allow user to upload and visualize .csv datafile on a table and a graph.
 
-## Using Boston Bioprocess Dashboard:
+## Using Time Series Visualize Dashboard:
 - there is only 3 pages
     - on the sider menu, there is `Data Upload`, `Data Table`, `Data Graph`
     - upload your csv file on `Data Upload`
         - limitation:
             - .csv extension
-            - first row shows client name and client id in this format `<client_name>_<client_id>`
-            - following row should contain following headers: time stamp, parameter, process value, units
+            - file name contain project name and project id in this format `<project_name>_<project_id>.csv`
+            - first row should contain following headers: time stamp, parameter, process value, units
             - following rows are the data corresponding to the headers
     - once upload complete, you can visualize the data in `Data Table` and `Data Graph`
     - `Data Table` and `Data Graph` have the following format:
         - click on the desired page to navigate
-        - select client on the dropdown menu
-        - data visualization correspond to selected client
+        - select project on the dropdown menu
+        - data visualization correspond to selected project
 
 # Web Server
-- https://yct-bbp.onrender.com/
+- TODO
 
 note: due to the web deployed on a free tier platform:
 - it will takes up to minutes to load the website
 - once website is up, first file upload will most likely fail, but wait a couple minutes, and try uploading it again.
-    - if the second upload didn't work, it might've been uploaded, navigate to `Data Table` or `Data Graph` to see if uploaded client exists.
+    - if the second upload didn't work, it might've been uploaded, navigate to `Data Table` or `Data Graph` to see if uploaded project exists.
 - large .csv file will likely fail, use this .csv example: `mock_csv.csv` (you can modify the values in the file and upload to see different data.)
 
 # Local Server (using Docker)
@@ -36,14 +35,14 @@ note: due to the web deployed on a free tier platform:
 - postgres https://www.postgresql.org/
 
 ## Installations & setups: 
-1. cd to boston-bioprocess (git repo)
+1. cd to time-series-visualize (git repo)
 
-`cd .\boston-bioprocess`
+`cd .\time-series-visualize`
 
-2. replace ENV variable in `.\boston-bioprocess\Dockerfile`
+2. replace ENV variable in `.\time-series-visualize\Dockerfile`
 ```
 ENV POSTGRESQL_SERVER=host.docker.internal
-ENV POSTGRESQL_DATABASE=client_fermentation
+ENV POSTGRESQL_DATABASE=time_series_projects
 ENV POSTGRESQL_PORT=5432
 ENV POSTGRESQL_USER=postgres
 ENV POSTGRESQL_PASSWORD=Postgresql98*
@@ -51,7 +50,7 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 
 3. build docker (~6 min)
 
-`docker build -t boston-bioprocess-app .`
+`docker build -t time-series-visualize-app .`
 
 4. OR you if you have set up Postgresql with ENV variables as shown above, you can simply pull from docker, this way build is not required.
 
@@ -63,7 +62,7 @@ ENV POSTGRESQL_PASSWORD=Postgresql98*
 ## Usage: Docker Local Server
 1. run docker image
 
-`docker run --rm -p 5000:5000 boston-bioprocess-app`
+`docker run --rm -p 5000:5000 time-series-visualize-app`
 
 or (if you pulled)
 
@@ -84,7 +83,7 @@ or (if you pulled)
 ### Backend:
 1. cd to backend directory
 
-`cd .\boston-bioprocess\backend`
+`cd .\time-series-visualize\backend`
 
 2. create virtual environment
 
@@ -104,7 +103,7 @@ or (if you pulled)
 
 1. cd to frontend directory
 
-`cd .\boston-bioprocess\frontend`
+`cd .\time-series-visualize\frontend`
 
 2. install frontend dependencies
 
@@ -114,18 +113,18 @@ or (if you pulled)
 
 1. open psql terminal (SQL Shell)
     - window search "psql"
-    - using SQL Shell, create database: client_fermentation
+    - using SQL Shell, create database: time_series_projects
 
-`CREATE DATABASE client_fermentation;`
+`CREATE DATABASE time_series_projects;`
 
 2. create a `.env` file to your backend directory
 
-`cd .\boston-bioprocess\backend`
+`cd .\time-series-visualize\backend`
 
 3. create: `.env` add below into `.env`:
 ```
 POSTGRESQL_SERVER = "localhost"
-POSTGRESQL_DATABASE = "client_fermentation"
+POSTGRESQL_DATABASE = "time_series_projects"
 POSTGRESQL_PORT = "5432"
 POSTGRESQL_USER = "postgres"
 POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
@@ -137,7 +136,7 @@ POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
 ## Usage: Manual Local Server
 1. cd to backend directory
 
-`cd .\boston-bioprocess\backend`
+`cd .\time-series-visualize\backend`
 
 2. start virtual environment
 
@@ -160,7 +159,7 @@ expect servers to be live on following server:
 ## Frontend testing:
 1. cd to frontend directory
 
-`cd .\boston-bioprocess\frontend`
+`cd .\time-series-visualize\frontend`
 
 2. start frontend server
 
@@ -182,7 +181,7 @@ No coverage for current version
 ## Backend testing:
 1. cd to backend directory
 
-`cd .\boston-bioprocess\backend`
+`cd .\time-series-visualize\backend`
 
 2. start virtual environment
 

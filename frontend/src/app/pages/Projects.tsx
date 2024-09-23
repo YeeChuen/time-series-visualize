@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
-import ClientFermentationLayout from "../../components/layout/ClientFermentationLayout";
+import ProjectsLayout from "../../components/layout/ProjectsLayout";
 
-const ClientFermentation = () => {
+const Projects = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -12,11 +12,11 @@ const ClientFermentation = () => {
     
   return (
     <div>
-      <ClientFermentationLayout>
+      <ProjectsLayout>
         <Outlet />
-      </ClientFermentationLayout>
+      </ProjectsLayout>
     </div>
   );
 };
 
-export default ClientFermentation;
+export default Projects;

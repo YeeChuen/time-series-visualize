@@ -1,6 +1,6 @@
-import { TRunClient, TRunTimeSeries } from "../../../types"
+import { TRunProject, TRunTimeSeries } from "../../../types"
 
 export type TCsvObject = {
-    runClient: TRunClient,
+    runProject: TRunProject,
     runTimeSeries: TRunTimeSeries[]
 } | undefined

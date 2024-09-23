@@ -1,9 +1,9 @@
 import { Navigate } from 'react-router'
 
-const ClientFermentationRedirect = () => {
+const ProjectsRedirect = () => {
   return (
     <Navigate to={"data-upload"}/>
   )
 }
 
-export default ClientFermentationRedirect
+export default ProjectsRedirect

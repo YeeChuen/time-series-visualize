@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const items1: MenuProps["items"] = [
   {
-    key: "client-fermentation",
-    label: <Link to={"/client-fermentation"}>Client Fermentation</Link>,
+    key: "projects",
+    label: <Link to={"/projects"}>Projects</Link>,
   },
 ];
 
@@ -13,7 +13,7 @@ const TopNavMenu = () => {
     <Menu
       data-test="topnav-menu"
       mode="horizontal"
-      defaultSelectedKeys={["client-fermentation"]}
+      defaultSelectedKeys={["projects"]}
       items={items1}
       style={{ flex: 1, minWidth: 0, margin: "0 10px" }}
     />

@@ -1,10 +1,10 @@
 import { Select } from "antd";
 import { useEffect, useState } from "react";
 import {
-  getRunClients,
-  getRunTimeSeriesByRunClient,
-} from "../../../lib/api/runClientApi";
-import { TRunClient, TRunTimeSeries } from "../../../types";
+  getRunProjects,
+  getRunTimeSeriesByRunProject,
+} from "../../../lib/api/runProjectApi";
+import { TRunProject, TRunTimeSeries } from "../../../types";
 import { useDataGraphContext } from "./DataGraphProvider";
 
 const DataGraphSelect = () => {
@@ -15,15 +15,15 @@ const DataGraphSelect = () => {
   const { setRunTimeSeries } = useDataGraphContext() || {};
 
   useEffect(() => {
-    const fetchRunClients = async () => {
-      const data = await getRunClients();
+    const fetchRunProjects = async () => {
+      const data = await getRunProjects();
       if (data.statusCode === 200) {
         // success request
         setOptions(
-          data.runClients.map((client: TRunClient) => {
+          data.runProjects.map((project: TRunProject) => {
             return {
-              value: client.id,
-              label: client.clientName,
+              value: project.id,
+              label: project.projectName,
             };
           })
         );
@@ -32,12 +32,12 @@ const DataGraphSelect = () => {
         console.error(data.message ? data.message : "Undefined error.");
       }
     };
-    fetchRunClients();
+    fetchRunProjects();
   }, []);
 
   const onChange = (value: string) => {
-    const fetchRunTimeSeriesByClient = async () => {
-      const data = await getRunTimeSeriesByRunClient(value);
+    const fetchRunTimeSeriesByProject = async () => {
+      const data = await getRunTimeSeriesByRunProject(value);
       if (data.statusCode === 200 && setRunTimeSeries) {
         setRunTimeSeries(
           data.runTimeSeries.map((runTimeSeries: TRunTimeSeries) => {
@@ -56,17 +56,17 @@ const DataGraphSelect = () => {
         console.error(data.message ? data.message : "Undefined error.");
       }
     };
-    fetchRunTimeSeriesByClient();
+    fetchRunTimeSeriesByProject();
   };
 
   return (
     <>
-      Select client:{" "}
+      Select project:{" "}
       <Select
-        data-test="client-selecter"
+        data-test="project-selecter"
         showSearch
         style={{ width: 200 }}
-        placeholder="Select a client"
+        placeholder="Select a project"
         optionFilterProp="label"
         onChange={onChange}
         options={options}

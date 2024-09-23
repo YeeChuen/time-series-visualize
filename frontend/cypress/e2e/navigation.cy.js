@@ -1,15 +1,15 @@
 describe("Navigation and layout testing", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173/client-fermentation/data-upload");
-    cy.intercept("GET", "http://localhost:5000/api/v1/run-clients", {
-      fixture: "getRunClients.json",
+    cy.visit("http://localhost:5173/projects/data-upload");
+    cy.intercept("GET", "http://localhost:5000/api/v1/run-projects", {
+      fixture: "getRunProjects.json",
     });
   });
 
   it("Contains correct layout and navigation", () => {
-    cy.contains(/boston bioprocess/i).should("be.visible");
+    cy.contains(/time series visualize/i).should("be.visible");
 
-    cy.location("pathname").should("equal", "/client-fermentation/data-upload");
+    cy.location("pathname").should("equal", "/projects/data-upload");
 
     cy.get('[data-test="layout-header"]').within(() => {
       cy.get("> a").should("have.length", 1); // 1 brand logo
@@ -20,7 +20,7 @@ describe("Navigation and layout testing", () => {
     cy.get('[data-test="topnav-menu"]').within(() => {
       cy.get("a").should("have.length", 1); // 1 top navigation routing
 
-      cy.get("a").eq(0).as("client-fermentation-btn");
+      cy.get("a").eq(0).as("projects-btn");
     });
 
     cy.get('[data-test="sider-menu"]').within(() => {
@@ -34,13 +34,13 @@ describe("Navigation and layout testing", () => {
 
       cy.location("pathname").should(
         "equal",
-        "/client-fermentation/data-table"
+        "/projects/data-table"
       );
       
       cy.get("@brand-btn").click();
       cy.location("pathname").should(
         "equal",
-        "/client-fermentation/data-upload"
+        "/projects/data-upload"
       );
 
       
@@ -48,13 +48,13 @@ describe("Navigation and layout testing", () => {
 
       cy.location("pathname").should(
         "equal",
-        "/client-fermentation/data-graph"
+        "/projects/data-graph"
       );
       
-      cy.get("@client-fermentation-btn").click();
+      cy.get("@projects-btn").click();
       cy.location("pathname").should(
         "equal",
-        "/client-fermentation/data-upload"
+        "/projects/data-upload"
       );
 
     });

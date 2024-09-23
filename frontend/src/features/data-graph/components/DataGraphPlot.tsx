@@ -28,7 +28,7 @@ const DataGraphPlot = () => {
         <>
           <DualAxes {...config} />
           <p style={{ width: "100%", textAlign: "center" }}>
-            Run client time series data
+            Project time series data
           </p>
         </>
       ) : (

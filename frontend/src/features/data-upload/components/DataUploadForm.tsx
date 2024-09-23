@@ -1,14 +1,14 @@
 import { InboxOutlined } from "@ant-design/icons";
 import { Button, Form, message, Select, Upload } from "antd";
 import { useState } from "react";
-import { createRunClient } from "../../../lib/api/runClientApi";
+import { createRunProject } from "../../../lib/api/runProjectApi";
 import { createAllRunTimeSeries } from "../../../lib/api/runTimeSeriesApi";
 import { parseCsv } from "./utils";
 
 type FieldType = {
   file?: string;
-  pump1?: string;
-  pump2?: string;
+  // pump1?: string;
+  // pump2?: string;
 };
 
 const normFile = (e: any) => {
@@ -30,13 +30,11 @@ const DataUploadForm = () => {
       const file = form.getFieldValue("file")[0].originFileObj;
       let csvObj = await parseCsv(
         file,
-        form.getFieldValue("pump1"),
-        form.getFieldValue("pump2")
       );
 
       /* replace below with actual uploading to db */
       if (csvObj) {
-        const req1 = await createRunClient(csvObj.runClient);
+        const req1 = await createRunProject(csvObj.runProject);
         const req2 = await createAllRunTimeSeries(csvObj.runTimeSeries);
 
         if (req1.statusCode !== 200 && req2.statusCode !== 200) {
@@ -91,6 +89,7 @@ const DataUploadForm = () => {
                 }
                 return isCsv ? false : Upload.LIST_IGNORE;
               }}
+              maxCount={1}
             >
               <p className="ant-upload-drag-icon">
                 <InboxOutlined />
@@ -105,7 +104,7 @@ const DataUploadForm = () => {
           </Form.Item>
         </Form.Item>
 
-        <Form.Item<FieldType>
+        {/* <Form.Item<FieldType>
           label="Pump 1:"
           name="pump1"
           rules={[{ required: true }]}
@@ -124,7 +123,7 @@ const DataUploadForm = () => {
             <Select.Option value="base">Base</Select.Option>
             <Select.Option value="acid">Acid</Select.Option>
           </Select>
-        </Form.Item>
+        </Form.Item> */}
 
         <div
           style={{

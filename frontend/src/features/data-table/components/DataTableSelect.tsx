@@ -1,11 +1,11 @@
 import { Button, Flex, Select } from "antd";
 import { useEffect, useState } from "react";
 import {
-  deleteRunClient,
-  getRunClients,
-  getRunTimeSeriesByRunClient,
-} from "../../../lib/api/runClientApi";
-import { TRunClient, TRunTimeSeries } from "../../../types";
+  deleteRunProject,
+  getRunProjects,
+  getRunTimeSeriesByRunProject,
+} from "../../../lib/api/runProjectApi";
+import { TRunProject, TRunTimeSeries } from "../../../types";
 import { useDataTableContext } from "./DataTableProvider";
 
 const DataTableSelect = () => {
@@ -18,15 +18,15 @@ const DataTableSelect = () => {
   const { setRunTimeSeries } = useDataTableContext() || {};
 
   useEffect(() => {
-    const fetchRunClients = async () => {
-      const data = await getRunClients();
+    const fetchRunProjects = async () => {
+      const data = await getRunProjects();
       if (data.statusCode === 200) {
         // success request
         setOptions(
-          data.runClients.map((client: TRunClient) => {
+          data.runProjects.map((project: TRunProject) => {
             return {
-              value: client.id,
-              label: client.clientName,
+              value: project.id,
+              label: project.projectName,
             };
           })
         );
@@ -35,12 +35,12 @@ const DataTableSelect = () => {
         console.error(data.message ? data.message : "Undefined error.");
       }
     };
-    fetchRunClients();
+    fetchRunProjects();
   }, []);
 
   const onChange = (value: string) => {
-    const fetchRunTimeSeriesByClient = async () => {
-      const data = await getRunTimeSeriesByRunClient(value);
+    const fetchRunTimeSeriesByProject = async () => {
+      const data = await getRunTimeSeriesByRunProject(value);
       if (data.statusCode === 200 && setRunTimeSeries) {
         setRunTimeSeries(
           data.runTimeSeries.map((runTimeSeries: TRunTimeSeries) => {
@@ -60,13 +60,13 @@ const DataTableSelect = () => {
         console.error(data.message ? data.message : "Undefined error.");
       }
     };
-    fetchRunTimeSeriesByClient();
+    fetchRunTimeSeriesByProject();
   };
 
   const onDelete = () => {
-    const onDeleteRunClient = async () => {
+    const onDeleteRunProject = async () => {
       if (deleteId) {
-        const data = await deleteRunClient(deleteId);
+        const data = await deleteRunProject(deleteId);
         if (data.statusCode === 200) {
           setDeleteId(undefined);
         } else {
@@ -75,26 +75,26 @@ const DataTableSelect = () => {
         }
       }
     };
-    onDeleteRunClient();
+    onDeleteRunProject();
   };
 
   return (
     <>
       <Flex justify="space-between">
         <div>
-          Select client:{" "}
+          Select project:{" "}
           <Select
-            data-test="client-selecter"
+            data-test="project-selecter"
             showSearch
             style={{ width: 200 }}
-            placeholder="Select a client"
+            placeholder="Select a project"
             optionFilterProp="label"
             onChange={onChange}
             options={options}
           />
         </div>
         <Button danger disabled={deleteId === undefined} onClick={onDelete}>
-          Delete client
+          Delete project
         </Button>
       </Flex>
     </>

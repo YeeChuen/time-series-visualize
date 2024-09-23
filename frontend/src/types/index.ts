@@ -1,7 +1,7 @@
-export type TRunClient = {
+export type TRunProject = {
     id?: string;
     runId: string;
-    clientName: string;
+    projectName: string;
 }
 
 export type TRunTimeSeries = {

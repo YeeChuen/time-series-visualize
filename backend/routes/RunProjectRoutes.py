@@ -1,29 +1,29 @@
 from flask import Blueprint, jsonify, request
 
-from services.RunClientService import (
-    get_client_service,
-    get_client_by_id_service,
-    create_client_service,
-    delete_client_by_id_service,
+from services.RunProjectService import (
+    get_project_service,
+    get_project_by_id_service,
+    create_project_service,
+    delete_project_by_id_service,
 )
 from services.RunTimeSeriesService import (
     get_run_time_series_by_run_id_service,
 )
 
-run_clients_bp = Blueprint("run_clients", __name__)
+run_projects_bp = Blueprint("run_projects", __name__)
 
 
-@run_clients_bp.route("/api/v1/run-clients", methods=["GET"])
-def get_client_route():
+@run_projects_bp.route("/api/v1/run-projects", methods=["GET"])
+def get_project_route():
     try:
-        clients = get_client_service()
+        projects = get_project_service()
 
-        clients_list = [
-            client.to_json()
-            for client in clients
+        projects_list = [
+            project.to_json()
+            for project in projects
         ]
 
-        return jsonify({"runClients": clients_list}), 200
+        return jsonify({"runProjects": projects_list}), 200
 
     except Exception as e:
         return (
@@ -37,18 +37,18 @@ def get_client_route():
         )
 
 
-@run_clients_bp.route("/api/v1/run-clients/<string:id>", methods=["GET"])
-def get_client_by_id_route(id):
+@run_projects_bp.route("/api/v1/run-projects/<string:id>", methods=["GET"])
+def get_project_by_id_route(id):
     try:
-        client = get_client_by_id_service(id)
+        project = get_project_by_id_service(id)
 
-        if not client:    
+        if not project:    
             return jsonify({
                     "status": "Error",
                     "message": "Data not found.",
                 }), 404
 
-        return jsonify(client.to_json()), 200
+        return jsonify(project.to_json()), 200
 
     except Exception as e:
         return (
@@ -62,32 +62,32 @@ def get_client_by_id_route(id):
         )
 
 
-@run_clients_bp.route("/api/v1/run-clients", methods=["POST"])
-def create_client_route():
+@run_projects_bp.route("/api/v1/run-projects", methods=["POST"])
+def create_project_route():
     try:
         data = request.get_json()
 
         run_id = data.get("runId")
-        client_name = data.get("clientName")
+        project_name = data.get("projectName")
 
-        if not run_id or not client_name:
+        if not run_id or not project_name:
             return (
                 jsonify(
                     {
                         "status": "Error",
-                        "message": "Missing property from request body for run client.",
+                        "message": "Missing property from request body for run project.",
                     }
                 ),
                 400,
             )
-        new_client = create_client_service({"runId": run_id, "clientName": client_name})
+        new_project = create_project_service({"runId": run_id, "projectName": project_name})
 
         return (
             jsonify(
                 {
                     "status": "Success",
                     "message": "Item created successfully",
-                    "data": new_client.to_json(),
+                    "data": new_project.to_json(),
                 }
             ),
             200,
@@ -105,10 +105,10 @@ def create_client_route():
         )
 
 
-@run_clients_bp.route("/api/v1/run-clients/<string:id>", methods=["DELETE"])
-def delete_client_by_id(id):
+@run_projects_bp.route("/api/v1/run-projects/<string:id>", methods=["DELETE"])
+def delete_project_by_id(id):
     try:
-        status = delete_client_by_id_service(id)
+        status = delete_project_by_id_service(id)
 
         if not status:
             return jsonify({
@@ -135,19 +135,19 @@ def delete_client_by_id(id):
             500,
         )
 
-# Get all time series for this client
-@run_clients_bp.route("/api/v1/run-clients/<string:id>/run-time-series", methods=["GET"])
-def get_run_time_series_by_run_client_route(id):
+# Get all time series for this project
+@run_projects_bp.route("/api/v1/run-projects/<string:id>/run-time-series", methods=["GET"])
+def get_run_time_series_by_run_project_route(id):
     try:
-        client = get_client_by_id_service(id)
+        project = get_project_by_id_service(id)
 
-        if not client:    
+        if not project:    
             return jsonify({
                     "status": "Error",
                     "message": "Data not found.",
                 }), 404
 
-        run_time_series = get_run_time_series_by_run_id_service(client.run_id)
+        run_time_series = get_run_time_series_by_run_id_service(project.run_id)
 
         run_time_series_list = [
             data.to_json()

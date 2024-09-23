@@ -1,12 +1,12 @@
 {
-    "runClients": [
+    "runProjects": [
       {
-        "clientName": "Client TEST001",
+        "projectName": "Project TEST001",
         "id": "bc107046-6c90-473a-b00b-faa2e818c037",
         "runId": "TEST001"
       },
       {
-        "clientName": "Client TEST002",
+        "projectName": "Project TEST002",
         "id": "d6ed1e72-eddd-4077-89c9-69df83b20e04",
         "runId": "TEST002"
       }

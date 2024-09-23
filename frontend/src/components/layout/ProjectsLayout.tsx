@@ -3,7 +3,7 @@ import React from "react";
 import SideNavMenu from "../navigation/SideNavMenu";
 
 const {  Content, Sider } = Layout;
-const ClientFermentationLayout = ({
+const ProjectsLayout = ({
   children,
 }: {
   children: React.ReactNode;
@@ -34,4 +34,4 @@ const ClientFermentationLayout = ({
   );
 };
 
-export default ClientFermentationLayout;
+export default ProjectsLayout;

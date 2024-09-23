@@ -1,9 +1,9 @@
-import { TRunClient } from "../../types";
+import { TRunProject } from "../../types";
 import { apiVersion1 } from "../constants";
 
-const url = `${apiVersion1}/run-clients`;
+const url = `${apiVersion1}/run-projects`;
 
-export const getRunClients = () => {
+export const getRunProjects = () => {
   return fetch(url)
     .then((response) => {
       const statusCode = response.status;
@@ -21,7 +21,7 @@ export const getRunClients = () => {
     });
 };
 
-export const getRunTimeSeriesByRunClient = (runId: string) => {
+export const getRunTimeSeriesByRunProject = (runId: string) => {
   return fetch(url + "/" + runId + "/run-time-series")
     .then((response) => {
       const statusCode = response.status;
@@ -39,7 +39,7 @@ export const getRunTimeSeriesByRunClient = (runId: string) => {
     });
 };
 
-export const createRunClient = (body: TRunClient) => {
+export const createRunProject = (body: TRunProject) => {
   const options = {
     method: "POST",
     headers: {
@@ -65,7 +65,7 @@ export const createRunClient = (body: TRunClient) => {
     });
 };
 
-export const deleteRunClient = (id: string) => {
+export const deleteRunProject = (id: string) => {
   const options = {
     method: "DELETE",
   };

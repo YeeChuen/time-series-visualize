@@ -43,7 +43,7 @@ RUN pip install -r ./requirements.txt
 
 ENV FLASK_ENV=production
 ENV POSTGRESQL_SERVER=host.docker.internal
-ENV POSTGRESQL_DATABASE=client_fermentation
+ENV POSTGRESQL_DATABASE=time_series_projects
 ENV POSTGRESQL_PORT=5432
 ENV POSTGRESQL_USER=postgres
 ENV POSTGRESQL_PASSWORD=Postgresql98*

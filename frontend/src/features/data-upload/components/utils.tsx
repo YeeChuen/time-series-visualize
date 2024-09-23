@@ -1,11 +1,11 @@
 import Papa, { ParseResult } from "papaparse";
-import { TRunClient } from "../../../types";
+import { TRunProject } from "../../../types";
 import { TCsvObject } from "../types/csvObject";
 
 export const parseCsv = async function (
   file: Blob,
-  pump1_replace: string,
-  pump2_replace: string
+  // pump1_replace: string,
+  // pump2_replace: string
 ): Promise<TCsvObject | undefined> {
   return new Promise((resolve, _) => {
     const reader = new FileReader();
@@ -13,7 +13,7 @@ export const parseCsv = async function (
     reader.onload = (e) => {
       const csvData = e.target?.result;
       // You can now process the CSV data, for example, parse it
-      resolve(processCsvData(csvData, pump1_replace, pump2_replace));
+      resolve(processCsvData(csvData, file as File));
     };
 
     reader.readAsText(file);
@@ -27,8 +27,8 @@ const capitalizeFirstLetter = (word: string) => {
 
 export const processCsvData = (
   csvString: string | ArrayBuffer | null | undefined,
-  pump1_replace: string,
-  pump2_replace: string
+  file: File,
+  // pump2_replace: string
 ): TCsvObject | undefined => {
   if (typeof csvString === "string") {
     let csvObj: TCsvObject;
@@ -40,20 +40,20 @@ export const processCsvData = (
           .map((row) => row.filter((str) => str !== ""))
           .filter((arr) => arr.length > 0);
         // in this array, we know that
-        // first row = client_name and run_id
+        // first row = project_name and run_id
         // second row == header
         // third row == start of data
 
-        // getting client name and run id
-        // assuming we follow the same format of <client_name>_<run_id>: <data collected>
-        const [clientName, runId] = arr[0][0].split(":")[0].split("_");
+        // getting project name and run id
+        // assuming we follow the same format of <project_name>_<run_id>: <data collected>
+        const [projectName, runId] = [file.name.split(".")[0], file.name.split(".")[0].split("_")[1]];
 
-        const runClientObj: TRunClient = {
+        const runProjectObj: TRunProject = {
           runId: runId,
-          clientName: clientName,
+          projectName: projectName,
         };
 
-        const indexMap = [...arr[1]];
+        const indexMap = [...arr[0]];
         const nameMap = indexMap.map((param) => {
           const jsName: string =
             param.split(" ")[0].toLowerCase() +
@@ -68,11 +68,11 @@ export const processCsvData = (
         });
 
         csvObj = {
-          runClient: runClientObj,
+          runProject: runProjectObj,
           runTimeSeries: [],
         };
 
-        for (const item of arr.slice(2)) {
+        for (const item of arr.slice(1)) {
           const obj: any = {runId: runId};
 
           for (const nameMapObj of nameMap) {
@@ -83,11 +83,7 @@ export const processCsvData = (
             if (jsNaming === "timeStamp" || jsNaming === "processValue") {
               obj[jsNaming] = parseFloat(value);
             } else if (jsNaming === "parameter") {
-              obj[jsNaming] = value.toLowerCase() == "pump1"
-                          ? pump1_replace
-                          : value.toLowerCase() == "pump2"
-                          ? pump2_replace
-                          : value
+              obj[jsNaming] = value
             } else {
               obj[jsNaming] = value;
             }

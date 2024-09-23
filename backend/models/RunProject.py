@@ -1,12 +1,12 @@
-class RunClient:
-    def __init__(self, id, run_id, client_name):
+class RunProject:
+    def __init__(self, id, run_id, project_name):
         self.id = id
         self.run_id = run_id
-        self.client_name = client_name
+        self.project_name = project_name
 
     def to_json(self):
         return {
             "id": self.id,
             "runId": self.run_id,
-            "clientName": self.client_name,
+            "projectName": self.project_name,
         }

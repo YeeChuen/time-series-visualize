@@ -2,7 +2,7 @@ from flask import Flask, send_from_directory
 from query.init_db import init_db
 from flask_cors import CORS
 
-from routes.RunClientRoutes import run_clients_bp
+from routes.RunProjectRoutes import run_projects_bp
 from routes.RunTimeSeriesRoutes import run_time_series_bp
 import os
 
@@ -19,7 +19,7 @@ def index():
     return app.send_static_file("index.html")
 
 
-app.register_blueprint(run_clients_bp)
+app.register_blueprint(run_projects_bp)
 app.register_blueprint(run_time_series_bp)
 
 

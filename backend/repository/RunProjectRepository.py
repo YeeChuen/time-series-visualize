@@ -1,9 +1,9 @@
-from models.RunClient import RunClient
+from models.RunProject import RunProject
 from query.init_db import db_conn
 
 
 # GET
-def get_client():
+def get_project():
     try:
         conn = db_conn()
         cur = conn.cursor()
@@ -11,17 +11,17 @@ def get_client():
         cur.execute(
             """
             SELECT *
-            FROM run_clients;
+            FROM run_projects;
             """
         )
         data = cur.fetchall()
         cur.close()
 
-        run_clients = [
-            RunClient(id=run_client[0], run_id=run_client[1], client_name=run_client[2])
-            for run_client in data
+        run_projects = [
+            RunProject(id=run_project[0], run_id=run_project[1], project_name=run_project[2])
+            for run_project in data
         ]
-        return run_clients
+        return run_projects
 
     except Exception as e:
         conn.rollback()
@@ -33,7 +33,7 @@ def get_client():
 
 
 # GET by id
-def get_client_by_id(id):
+def get_project_by_id(id):
     try:
         conn = db_conn()
         cur = conn.cursor()
@@ -41,7 +41,7 @@ def get_client_by_id(id):
         cur.execute(
             """
             SELECT *
-            FROM run_clients
+            FROM run_projects
             WHERE id = %s;""",
             (id,),
         )
@@ -53,9 +53,9 @@ def get_client_by_id(id):
             conn.close()
             return None
 
-        new_client = RunClient(id=data[0], run_id=data[1], client_name=data[2])
+        new_project = RunProject(id=data[0], run_id=data[1], project_name=data[2])
 
-        return new_client
+        return new_project
 
     except Exception as e:
         conn.rollback()
@@ -67,17 +67,17 @@ def get_client_by_id(id):
 
 
 # POST
-def create_client(new_client):
+def create_project(new_project):
     try:
         conn = db_conn()
         cur = conn.cursor()
 
         cur.execute(
             """
-            INSERT INTO run_clients (run_id, client_name) 
+            INSERT INTO run_projects (run_id, project_name) 
             VALUES (%s, %s)
-            RETURNING id, run_id, client_name;""",
-            (new_client["runId"], new_client["clientName"]),
+            RETURNING id, run_id, project_name;""",
+            (new_project["runId"], new_project["projectName"]),
         )
 
         # Fetch the newly created value
@@ -85,9 +85,9 @@ def create_client(new_client):
         conn.commit()
         cur.close()
 
-        new_client = RunClient(id=data[0], run_id=data[1], client_name=data[2])
+        new_project = RunProject(id=data[0], run_id=data[1], project_name=data[2])
 
-        return new_client
+        return new_project
 
     except Exception as e:
         conn.rollback()
@@ -102,14 +102,14 @@ def create_client(new_client):
 
 
 # Delete
-def delete_client_by_id(id):
+def delete_project_by_id(id):
     try:
         conn = db_conn()
         cur = conn.cursor()
 
         cur.execute(
             """
-            DELETE FROM run_clients 
+            DELETE FROM run_projects 
             WHERE id = %s;
             """,
             (id,),
