@@ -39,36 +39,20 @@ note: due to the web deployed on a free tier platform:
 - postgres https://www.postgresql.org/
 
 ## Installations & setups: 
-1. cd to time-series-visualize (git repo)
+1. Pull from docker hub
 
-`cd .\time-series-visualize`
+`docker pull yeechuen/yc-tsv-app`
 
-2. replace ENV variable in `.\time-series-visualize\Dockerfile`
-```
-ENV POSTGRESQL_SERVER=host.docker.internal
-ENV POSTGRESQL_DATABASE=time_series_projects
-ENV POSTGRESQL_PORT=5432
-ENV POSTGRESQL_USER=postgres
-ENV POSTGRESQL_PASSWORD=Postgresql98*
-```
-
-3. build docker (~6 min)
-
-`docker build -t time-series-visualize-app .`
-
-4. OR you if you have set up Postgresql with ENV variables as shown above, you can simply pull from docker, this way build is not required.
-
-`docker pull yeechuen/yct-bpp`
-
-6. follow setup steps for [postgresql](#Database)
+2. use following variable during setup steps for [postgresql](#Database)
+POSTGRESQL_SERVER=host.docker.internal
+POSTGRESQL_DATABASE=time_series_projects
+POSTGRESQL_PORT=5432
+POSTGRESQL_USER=postgres
+POSTGRESQL_PASSWORD=Postgresql98*
 
 
 ## Usage: Docker Local Server
 1. run docker image
-
-`docker run --rm -p 5000:5000 time-series-visualize-app`
-
-or (if you pulled)
 
 `docker run --rm -p 5000:5000 yeechuen/yct-bpp`
 
