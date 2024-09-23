@@ -56,5 +56,5 @@ EXPOSE 5000
 WORKDIR /app/backend
 CMD ["gunicorn", "-b", ":5000", "app:app"]
 # CMD ["gunicorn", "-b", ":5000", "wsgi:app"]
-# docker build -t boston-bioprocess-app .
-# docker run --rm -p 5000:5000 boston-bioprocess-app
+# docker build -t time-series-visualize-app .
+# docker run --rm -p 5000:5000 time-series-visualize-app

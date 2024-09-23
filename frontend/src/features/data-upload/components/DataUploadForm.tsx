@@ -1,5 +1,5 @@
 import { InboxOutlined } from "@ant-design/icons";
-import { Button, Form, message, Select, Upload } from "antd";
+import { Button, Form, message, Upload } from "antd";
 import { useState } from "react";
 import { createRunProject } from "../../../lib/api/runProjectApi";
 import { createAllRunTimeSeries } from "../../../lib/api/runTimeSeriesApi";

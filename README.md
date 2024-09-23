@@ -84,6 +84,16 @@ or (if you pulled)
 - postgres https://www.postgresql.org/
 
 ## Installations & Setups:   
+### Database:
+
+1. open psql terminal (SQL Shell)
+    - window search "psql"
+    - using SQL Shell, create database: time_series_projects
+
+`CREATE DATABASE time_series_projects;`
+
+- note: update each variable based on your setup.
+
 ### Backend:
 1. cd to backend directory
 
@@ -103,6 +113,15 @@ or (if you pulled)
 
 `pip install -r requirements.txt`
 
+5. create: `.env` add below into `.env`:
+```
+POSTGRESQL_SERVER = <your postgres server> (default "localhost")
+POSTGRESQL_DATABASE = "time_series_projects"
+POSTGRESQL_PORT = <your postgres port> (default "5432")
+POSTGRESQL_USER = "<your postgres user>"
+POSTGRESQL_PASSWORD = "<your postgres password>"
+```
+
 ### Frontend:
 
 1. cd to frontend directory
@@ -113,29 +132,10 @@ or (if you pulled)
 
 `npm install`
 
-### Database:
-
-1. open psql terminal (SQL Shell)
-    - window search "psql"
-    - using SQL Shell, create database: time_series_projects
-
-`CREATE DATABASE time_series_projects;`
-
-2. create a `.env` file to your backend directory
-
-`cd .\time-series-visualize\backend`
-
 3. create: `.env` add below into `.env`:
 ```
-POSTGRESQL_SERVER = "localhost"
-POSTGRESQL_DATABASE = "time_series_projects"
-POSTGRESQL_PORT = "5432"
-POSTGRESQL_USER = "postgres"
-POSTGRESQL_PASSWORD = "<your password>*"  # on default Postgresql98*
+VITE_MICROSERVICE_BASE_URL = <your microservice url> (default "http://localhost:5000")
 ```
-
-- note: update each variable based on your setup.
-
 
 ## Usage: Manual Local Server
 1. cd to backend directory
